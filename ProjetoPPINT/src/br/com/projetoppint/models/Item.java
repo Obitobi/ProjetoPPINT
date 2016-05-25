@@ -15,23 +15,19 @@ public class Item implements IItem {
 	private String nome;
 	private double precoUnitario;
 	private TiposItens tipo;
-	private Pedido pedido;
-	
-	public Item()
-	{
+
+	public Item() {
 		this.id = 0;
 		this.nome = "";
 		this.precoUnitario = 0.0;
 		this.tipo = TiposItens.Entrada;
-		this.pedido = new Pedido();
 	}
-	
-	public Item(IItem sourceObject)
-	{
+
+	public Item(IItem sourceObject) {
 		this.id = sourceObject.getId();
 		this.nome = sourceObject.getNome();
 		this.precoUnitario = sourceObject.getPrecoUnitario();
-		this.pedido = sourceObject.getPedido();
+		this.tipo = sourceObject.getTipo();
 	}
 
 	/**
@@ -42,7 +38,8 @@ public class Item implements IItem {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -56,7 +53,8 @@ public class Item implements IItem {
 	}
 
 	/**
-	 * @param nome the nome to set
+	 * @param nome
+	 *            the nome to set
 	 */
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -70,37 +68,27 @@ public class Item implements IItem {
 	}
 
 	/**
-	 * @param precoUnitario the precoUnitario to set
+	 * @param precoUnitario
+	 *            the precoUnitario to set
 	 */
 	public void setPrecoUnitario(double precoUnitario) {
 		this.precoUnitario = precoUnitario;
 	}
-	
+
 	/**
 	 * 
-	 * @param tipo the tipo to set
+	 * @param tipo
+	 *            the tipo to set
 	 */
-	public void setTipo(TiposItens tipo)
-	{
+	public void setTipo(TiposItens tipo) {
 		this.tipo = tipo;
 	}
-	
+
 	/**
 	 * 
 	 * @return the tipo
 	 */
-	public TiposItens getTipo()
-	{
+	public TiposItens getTipo() {
 		return this.tipo;
-	}
-	
-	public void setPedido(Pedido pedido)
-	{
-		this.pedido = pedido;
-	}
-	
-	public Pedido getPedido()
-	{
-		return this.pedido;
 	}
 }

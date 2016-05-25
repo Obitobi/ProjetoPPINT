@@ -1,5 +1,6 @@
 package br.com.projetoppint.interfaces;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 import br.com.projetoppint.models.Item;
@@ -10,5 +11,6 @@ import br.com.projetoppint.models.Item;
  */
 public interface IPedido {
 	int getId();
+	Date getData();
 	ArrayList<Item> getListaItens();
 }
