@@ -15,6 +15,7 @@ public class Item implements IItem {
 	private String nome;
 	private double precoUnitario;
 	private TiposItens tipo;
+	private Pedido pedido;
 	
 	public Item()
 	{
@@ -22,6 +23,7 @@ public class Item implements IItem {
 		this.nome = "";
 		this.precoUnitario = 0.0;
 		this.tipo = TiposItens.Entrada;
+		this.pedido = new Pedido();
 	}
 	
 	public Item(IItem sourceObject)
@@ -29,6 +31,7 @@ public class Item implements IItem {
 		this.id = sourceObject.getId();
 		this.nome = sourceObject.getNome();
 		this.precoUnitario = sourceObject.getPrecoUnitario();
+		this.pedido = sourceObject.getPedido();
 	}
 
 	/**
@@ -89,5 +92,15 @@ public class Item implements IItem {
 	public TiposItens getTipo()
 	{
 		return this.tipo;
+	}
+	
+	public void setPedido(Pedido pedido)
+	{
+		this.pedido = pedido;
+	}
+	
+	public Pedido getPedido()
+	{
+		return this.pedido;
 	}
 }
