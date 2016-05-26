@@ -23,7 +23,6 @@ public class ItemPedido implements IItemPedido {
 	}
 
 	public ItemPedido(IItemPedido sourceObject) {
-		super();
 		this.id = sourceObject.getId();
 		this.pedido = sourceObject.getPedido();
 		this.itens = sourceObject.getItens();
